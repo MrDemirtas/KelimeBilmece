@@ -1,0 +1,257 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-family: "Noto Serif", serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 80%;
+  min-height: 50vh;
+  margin-inline: auto;
+  background-color: #272727;
+  border: 1px solid #ffffff6c;
+  border-radius: 8px;
+  text-align: center;
+  padding: 24px;
+
+  h1 {
+    font-size: 48px;
+    color: chartreuse;
+    font-family: "Tiny5", sans-serif;
+  }
+
+  p {
+    font-size: 18px;
+    color: khaki;
+  }
+
+  ol {
+    padding: 0;
+    display: flex;
+    gap: 28px;
+    text-align: left;
+    font-weight: 300;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-inline: 24px;
+    color: antiquewhite;
+    li::marker {
+      color: chartreuse;
+    }
+  }
+}
+
+.info {
+  font-size: 20px;
+  font-style: italic;
+  margin-inline: 5px;
+  color: khaki;
+}
+
+.inputWordContent {
+  margin-top: auto;
+  display: flex;
+  column-gap: 16px;
+  row-gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.inputWord {
+  text-align: center;
+  width: 60px;
+  padding: 16px;
+  font-size: 24px;
+  outline: none;
+  background-color: #1f1f1f;
+  border: none;
+  color: chartreuse;
+  font-weight: 800;
+  letter-spacing: 5px;
+  border-bottom: 1px solid chartreuse;
+}
+
+.buttons {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+
+  :first-child {
+    background-color: khaki;
+  }
+
+  :last-child {
+    background-color: chartreuse;
+  }
+
+  :first-child:active {
+    background-color: #fffbd9;
+  }
+  :last-child:active {
+    background-color: #c3ff87;
+  }
+
+  button {
+    padding: 16px 64px;
+    font-size: 20px;
+    color: black;
+    font-weight: 800;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}
+
+.readOnly {
+  background-color: #494949;
+  color: khaki;
+  border-bottom: 1px solid khaki;
+}
+
+.tdk {
+  list-style-type: none;
+  padding: 0;
+}
+
+.statusMsg {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #00000080;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.statusMsgContent {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #00ff7b;
+  box-shadow: 0px 0px 50px #00ff7b;
+  border-radius: 8px;
+  padding: 124px;
+  color: black;
+}
+
+.statusMsgButtons {
+  position: absolute;
+  bottom: 24px;
+}
+
+.playAgain {
+  display: none;
+  padding: 8px 24px;
+  background-color: #ffe800;
+  font-weight: 800;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.playAgain:active {
+  background-color: #fff587;
+}
+
+.tryAgain {
+  display: none;
+  padding: 8px 24px;
+  background-color: #00fffc;
+  font-weight: 800;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tryAgain:active {
+  background-color: #9cfffd;
+}
+
+.socialMedia {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    flex-direction: row;
+  }
+}
